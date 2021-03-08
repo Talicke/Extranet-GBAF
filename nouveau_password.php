@@ -23,6 +23,7 @@ $user = $_GET['user'];
     <p></p>
 </header>
 
+<!-- formulaire de soumission réponse/nouveau password -->
 <div class="groupe-form container">
 <?php
   echo $donnees['question'];  
@@ -38,7 +39,7 @@ $user = $_GET['user'];
     </form>
         <a href="connection.php">Retour à l'écran de connexion</a>
 </div>
-
+<!-- vérification de la réponse et enregistrement du nouveau mot de passe-->
 <?php
     if(isset($_POST['submit_reponse'])){
         if ($_POST['nouveau_password'] == $_POST['nouveau_password_confirm']){

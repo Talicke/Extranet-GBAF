@@ -12,9 +12,11 @@
     <p></p>
 </header>
 
+<body>
+
 
 <div class="container">
-<body>
+<!--formulaire de connection et lien mdp oublier-->
     <form action='' method='post'>
     
     <div class="form-group">
@@ -31,19 +33,21 @@
     <button type='submit' class="btn btn-primary" name='connection'>Connexion</button>
     </form>
     
+<!-- Comparaison des informations de connexion (password et username)-->
 <?php
-    if (isset($_POST['connection']))                                                                   //récupération de l'utilisateur et de son pass haché//
+    if (isset($_POST['connection']))                                                                  
     {
         $bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '');
 
-        $req = $bdd->prepare('SELECT * FROM comptes WHERE username = ?');                      
+        $req = $bdd->prepare('SELECT * FROM comptes WHERE username = ?');
                 $req->execute(array($_POST['username']));
                 $resultat = $req->fetch();
                     $correctPassword = password_verify($_POST['password'], $resultat['password']);
 
-        if ($resultat == false || $correctPassword == false)                                            //mauvaise authentification//
+        if ($resultat == false || $correctPassword == false)
                 {
-                    echo "Mauvais identifiant ou mot de passe.";
+                    $format = '<br /><p class="text-primary">Mauvais identifiant ou mot de passe.</p>';
+                    printf ($format);
                 }
         else                                                                                          
                 {
@@ -60,7 +64,8 @@
                         }
                     else
                         {
-                            echo "mauvais identifiant ou mot de passe.";
+                            $format = '<br /><p class="text-primary">Mauvais identifiant ou mot de passe.</p>';
+                            echo sprintf ($format);
                         }
                 }
 
@@ -79,5 +84,5 @@
 <?php require 'inc/footer.php'?>
 
       
-  </body>
+</body>
 </html>

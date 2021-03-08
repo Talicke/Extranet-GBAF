@@ -10,7 +10,7 @@
 <hr>
 </div>
 
-
+<!--Affichage des partenaire/acteur-->
 <div id='acteur'>
     <h1>Les acteurs et partenaires</h2>
     
@@ -38,4 +38,5 @@ echo sprintf($format, $donnees['logo'], $donnees['nom'], $donnees['nom'], $descr
 ?>
 
 </div>
+
 <?php require 'inc/footer.php'?>

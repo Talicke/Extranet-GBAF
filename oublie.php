@@ -12,6 +12,7 @@
     <p></p>
 </header>
 
+<!-- formulaire de soumission du username-->
 <div class="groupe-form container">
     <form method="post" action="">
         <label class="group-label" for="username">Quel est votre nom utilisateur ?</label>
@@ -20,7 +21,7 @@
     </form>
 </div>
 
-
+<!-- vérification  du usernam-->
 <?php
 if(isset($_POST['submit_username'])){
     $bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '');
