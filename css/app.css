@@ -6889,18 +6889,20 @@ footer{
     border: 2px #d9230f solid;
     border-radius: 5px;
 }
+@media (max-width : 1200px){
+    .logo_mini{
+        max-height: 70px;
+    }
+}
 
-@media (max-width: 1220px){
+
+@media (max-width: 992px){
     .logo{
         width: 500px;
     }
     
     .partenaire_liste{
-    justify-content: center;
-    }
-
-    .texte_partenaire{
-    margin-left: none;
+        justify-content: center;
     }
 }
 
@@ -6909,12 +6911,8 @@ footer{
         width: 300px;
     }
     
-        .partenaire_liste{
-    justify-content: center;
-    }
-
-    .texte_partenaire{
-    margin-left: none;
+    .partenaire_liste{
+        justify-content: center;
     }
 }
 
