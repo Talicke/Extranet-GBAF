@@ -43,7 +43,8 @@
 
         if ($resultat == false || $correctPassword == false)                                            //mauvaise authentification//
                 {
-                    echo "Mauvais identifiant ou mot de passe.";
+                    $format = '<br /><p class="text-primary">Mauvais identifiant ou mot de passe.</p>';
+                    echo sprintf ($format);
                 }
         else                                                                                          
                 {
@@ -60,7 +61,8 @@
                         }
                     else
                         {
-                            echo "mauvais identifiant ou mot de passe.";
+                            $format = '<br /><p class="text-primary">Mauvais identifiant ou mot de passe.</p>';
+                            echo sprintf ($format);
                         }
                 }
 

@@ -50,47 +50,21 @@ $nb_dislike = $req->fetch();
     </form>
 </div>
 
-<!--Affichage des commentaires-->
-<?php
-$reponse=$bdd->prepare('SELECT commentaires.id_compte AS compte_commentaire,
-                    comptes.username AS username_compte,
-                    commentaires.commentaire,
-                    commentaires.date, commentaires.id_compte
-                    FROM comptes INNER JOIN commentaires
-                    ON commentaires.id_compte = comptes.id_compte WHERE id_partenaire = :partenaire
-                    ORDER BY id_commentaire DESC
-                    LIMIT 0, 10');
-$reponse->execute(array(
-    'partenaire' => $partenaire));
-while ($commentaire=$reponse->fetch()){
-
-    $format =
-    '<div class="affichage_commentaire">
-        de:%s
-        le: %s<br />
-        message: %s
-    </div>';
-
-echo sprintf ($format, $commentaire['username_compte'], $commentaire['date'], $commentaire['commentaire']);
-}
-?>
-
 <!-- Formulaire commentaire -->
 <div class="formulaire_vote">
         <form action="" method="post">
             <div class="form-groupe">
                 <label class="control-label" for="commentaire">Nouveau commentaire:</label>
-                <textarea class="form-control" name="commentaire" id="commentaire" rows="3"></textarea>
+                <textarea class="form-control" name="commentaire" id="commentaire" rows="3"></textarea><br />
                 <input type="hidden" value="<?php echo $resultat['id_partenaire'];?>" name="id_partenaire">
                 <input type="hidden" value="<?php echo $_SESSION['id'];?>" name="id_compte">
-                <input class="btn btn-primary" type="submit" value="Envoyer" name="submit_commentaire">
+                <button class="btn btn-primary" type="submit" name="submit_commentaire">Valider</button>
             </div>
         </form>
     </div>
-</div>
-<hr>
-<?php
 
+
+<?php
 //Enregistrement des commentaires
 if(isset($_POST['submit_commentaire'])){
     if(!empty($_POST['commentaire'])){
@@ -100,12 +74,46 @@ if(isset($_POST['submit_commentaire'])){
         'compte' => $_SESSION['id'],
         'partenaire' => $partenaire));
 
-    header("Refresh:5");
+    header("Refresh:0");
 
     }else{
-        echo "vous devez écrire un commentaire";
+        $format = '<br /><p class="text-primary">Vous devez écrire un commentaire.</p>';
+        echo sprintf ($format);
     }
 }
+
+?>
+</div>
+
+
+<!--Affichage des commentaires-->
+<?php
+$reponse=$bdd->prepare('SELECT commentaires.id_compte AS compte_commentaire,
+                        comptes.username AS username_compte,
+                        commentaires.commentaire,
+                        commentaires.date, commentaires.id_compte
+                        FROM comptes INNER JOIN commentaires
+                        ON commentaires.id_compte = comptes.id_compte WHERE id_partenaire = :partenaire
+                        ORDER BY id_commentaire DESC
+                        LIMIT 0, 10');
+$reponse->execute(array(
+    'partenaire' => $partenaire));
+while ($commentaire=$reponse->fetch()){
+
+    $format =
+    '<div class="affichage_commentaire">
+        de : %s<br />
+        le : %s<br />
+        message : %s
+    </div>';
+
+printf ($format, $commentaire['username_compte'], $commentaire['date'], $commentaire['commentaire']);
+}
+?>
+
+<hr>
+
+<?php
 
 //Enregistrement des likes
 if(isset($_POST['submit_like'])){
@@ -156,5 +164,4 @@ $reponse = $req->fetch();
             'partenaire' => $partenaire));
     }
 }
-?>
-<?php require 'inc/footer.php';?>
+require 'inc/footer.php';?>
