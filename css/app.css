@@ -6890,15 +6890,31 @@ footer{
     border-radius: 5px;
 }
 
-@media (max-width: 992px){
+@media (max-width: 1220px){
     .logo{
         width: 500px;
+    }
+    
+    .partenaire_liste{
+    justify-content: center;
+    }
+
+    .texte_partenaire{
+    margin-left: none;
     }
 }
 
 @media (max-width: 768px){
     .logo{
         width: 300px;
+    }
+    
+        .partenaire_liste{
+    justify-content: center;
+    }
+
+    .texte_partenaire{
+    margin-left: none;
     }
 }
 

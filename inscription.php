@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="css/app.css" />
-        <title>S'inscrire</title>
+        <title>Inscription</title>
     </head>
 
     <body>
@@ -54,10 +54,9 @@
     
 </form>
 
-<br /><a href="connection.php">Retourner à la page de connexion.</a>
-</div>
 
 <?php
+        //enregistrement d'nn nouveau compte
         if(isset ($_POST['submit_inscription'])){
             if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['username']) AND !empty($_POST['password']) AND !empty($_POST['password_confirm']) AND !empty($_POST['reponse'])){
                 
@@ -91,20 +90,19 @@
                     }
                     else
                     {
-                        echo "les mots de passe ne sont pas identique";
+                        $format = '<br /><p class="text-primary">les mots de passe ne sont pas identique</p>';
+                        printf ($format);
                       
                     }
                     
               
+                
+            }else{
+                    $format = '<br /><p class="text-primary">Tous les champs doivent être remplies</p>';
+                    printf ($format);
                 }
-            else{
-                echo "tous les champs doivent être remplies";
-                }
-        }
-        else
-           {
-               
-           }
+        }   
 ?>
-
+<br /><a href="connection.php">Retourner à la page de connexion.</a>
+</div>
 <?php require 'inc/footer.php';?>

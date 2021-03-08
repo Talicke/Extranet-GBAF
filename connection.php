@@ -44,7 +44,7 @@
         if ($resultat == false || $correctPassword == false)                                            //mauvaise authentification//
                 {
                     $format = '<br /><p class="text-primary">Mauvais identifiant ou mot de passe.</p>';
-                    echo sprintf ($format);
+                    printf ($format);
                 }
         else                                                                                          
                 {
