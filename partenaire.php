@@ -141,7 +141,7 @@ if(isset($_POST['submit_commentaire'])){
 <!--Affichage des commentaires-->
 <?php
 $reponse=$bdd->prepare('SELECT commentaires.id_compte AS compte_commentaire,
-                        comptes.username AS username_compte,
+                        comptes.prenom AS prenom_compte,
                         commentaires.commentaire,
                         commentaires.date, commentaires.id_compte
                         FROM comptes INNER JOIN commentaires
@@ -159,7 +159,7 @@ while ($commentaire=$reponse->fetch()){
         message : %s
     </div>';
 
-printf ($format, $commentaire['username_compte'], $commentaire['date'], $commentaire['commentaire']);
+printf ($format, $commentaire['prenom_compte'], $commentaire['date'], $commentaire['commentaire']);
 }
 ?>
 
