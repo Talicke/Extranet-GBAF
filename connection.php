@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8/'>
-        <link href='css/app.css' rel='stylesheet'/>
-        <title>Connection</title>
-    </head>
+<html lang="fr">
+   
+<head>
+    <meta charset='utf-8'>
+    <link href='css/app.css' rel='stylesheet'/>
+    <title>Connection</title>
+</head>
     
 <header class="gbaf-header">
     <img width="100" src="inc/logo/GBAF_logo.png" alt="logo du gbaf">
@@ -12,12 +13,10 @@
     <p></p>
 </header>
 
-<body>
-
-
+<main>
 <div class="container">
 <!--formulaire de connection et lien mdp oublier-->
-    <form action='' method='post'>
+    <form method='post'>
     
     <div class="form-group">
         <label class="control-label" for="username">Nom d'utilisateur:</label>
@@ -78,11 +77,8 @@
 
 <br />
     <p><a href="inscription.php">Creer un compte</a></p>
-    </div>
+    
+</div>
 
 
 <?php require 'inc/footer.php'?>
-
-      
-</body>
-</html>

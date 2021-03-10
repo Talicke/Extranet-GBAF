@@ -7,14 +7,12 @@ $user = $_GET['user'];
         'user' => $user));
     $donnees = $req->fetch();
 
-?>
-
-<!DOCTYPE html>
-<html>
+?><!DOCTYPE html>
+<html lang="fr">
     <head>
-        <meta charset='utf-8/'>
+        <meta charset='utf-8'>
         <link href='css/app.css' rel='stylesheet'/>
-        <title>Connection</title>
+        <title>Nouveau mot de passe</title>
     </head>
     
 <header class="gbaf-header">
@@ -23,12 +21,13 @@ $user = $_GET['user'];
     <p></p>
 </header>
 
+<main>
 <!-- formulaire de soumission réponse/nouveau password -->
 <div class="groupe-form container">
 <?php
   echo $donnees['question'];  
 ?>
-    <form method="post" action="">
+    <form method="post">
         <label class="group-label" for="reponse">Votre reponse:</label>
         <input class="form-control" type="text" name="reponse" id="reponse"><br />
         <label class="group-label" for="nouveau_password">Nouveau mot de passe:</label>
@@ -58,7 +57,3 @@ $user = $_GET['user'];
 
 
 <?php require 'inc/footer.php'?>
-
-      
-  </body>
-</html>

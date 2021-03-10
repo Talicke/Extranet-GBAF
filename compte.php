@@ -5,25 +5,25 @@
 <div class="container">
 
 <!--Formulaire pour les modifications de compte-->
-<form action='' method="post">
+<form method="post">
 <!--Nouveau prenom-->    
     <div class="form-group">
         <label class="control-label" for="nouveau_prenom">Nouveau prénom</label>
-        <input type="text" class="form-control" name="nouveau_prenom" id="nouveau_prenom"/>
+        <input type="text" class="form-control" name="nouveau_prenom" id="nouveau_prenom">
     </div>
-        <button type=submit class="btn btn-default" name="submit_nouveau_prenom"/>Modifier</button>
+        <button type=submit class="btn btn-default" name="submit_nouveau_prenom">Modifier</button>
 <!--Nouveau nom-->    
     <div class="form-group">
-        <br /><label class="control-label" for="nom">Nouveau nom</label>
+        <br /><label class="control-label" for="nouveau_nom">Nouveau nom</label>
         <input type="text" class="form-control" name="nouveau_nom" id="nouveau_nom"/>
     </div>
-        <button type="submit" class="btn btn-default" value='modifier' name="submit_nouveau_nom"/>Modifier</button>
+        <button type="submit" class="btn btn-default" value='modifier' name="submit_nouveau_nom">Modifier</button>
 <!--Nouveau username-->        
     <div class="form-group">    
         <br/><label class="control-label" for="username">nouveau nom d'utilisateur</label>
         <input type="text" class="form-control" name="username" id="username"/>
     </div>
-        <button type='submit' class="btn btn-default" name='nouveau_username'/>Modifier</button>
+        <button type='submit' class="btn btn-default" name='nouveau_username'>Modifier</button>
 <!-- Nouveau password-->
     <div class="form-group">   
         <br/><label class="control-label" for='nouveau_password'>Nouveau mot de passe</label>
@@ -31,7 +31,7 @@
         <label class="control-label" for='nouveau_password_confirm'>Confirmez le nouveau mot de passe</label>
         <input type='password' class="form-control" name='nouveau_password_confirm' id='nouveau_password_confirm'/>
     </div>      
-        <button type='submit' class="btn btn-default" name='submit_nouveau_password'/>Modifier</button>
+        <button type='submit' class="btn btn-default" name='submit_nouveau_password'>Modifier</button>
 <!--Nouvelle question/réponse-->          
     <div class="form-group">
         <br /><label class="control-label" for='nouvelle_question'>Choisissez une nouvelle question secrète</label>
@@ -146,7 +146,7 @@
     }
 ?>
 
-<div>
+</div>
 
 <?php 
 require 'inc/footer.php';

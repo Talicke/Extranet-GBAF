@@ -6,18 +6,16 @@ if (session_status() == PHP_SESSION_NONE)
 }
 
 ?>
-
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="utf-8">
+    <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
     <title>Gbaf</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
+<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
 
     
 
@@ -67,7 +65,6 @@ if (session_status() == PHP_SESSION_NONE)
     </div>
   </div>
 </nav>
-  </header>
-  <body>
+</header>
 
 <main class="container">

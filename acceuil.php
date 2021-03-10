@@ -12,7 +12,7 @@
 
 <!--Affichage des partenaire/acteur-->
 <div id='acteur'>
-    <h1>Les acteurs et partenaires</h2>
+    <h2>Les acteurs et partenaires</h2>
     
       <?php
 $bdd = new PDO('mysql:host=localhost;dbname=gbaf;charset=utf8', 'root', '');

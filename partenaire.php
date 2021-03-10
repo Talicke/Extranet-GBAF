@@ -14,7 +14,7 @@ $format ='<div class="detail_partenaire">
             <img class="logo" src=inc/logo/%s alt="logo %s"><br/>
             <h2>%s</h2><br/>
             <div class="description_partenaire">
-                <p>%s</p>
+                %s
             </div>
         </div>';
 
@@ -98,7 +98,7 @@ $nb_dislike = $req->fetch();
     <p><?php echo $nb_commentaire['nombre_commentaire'];?> commentaires</p>
 
     <!--Formulaire de vote-->
-    <form action="" method="post">
+    <form method="post">
             <button class="btn btn-success btn-sm" type="submit" name="submit_like"><?php echo $nb_like['nb_like'];?> J'aime</button>
             <button class="btn btn-primary btn-sm" type="submit" name="submit_dislike"><?php echo $nb_dislike['nb_dislike'];?> J'aime pas</button>
     </form>
@@ -106,7 +106,7 @@ $nb_dislike = $req->fetch();
 
 <!-- Formulaire commentaire -->
 <div class="formulaire_vote">
-        <form action="" method="post">
+        <form method="post">
             <div class="form-groupe">
                 <label class="control-label" for="commentaire">Nouveau commentaire:</label>
                 <textarea class="form-control" name="commentaire" id="commentaire" rows="3"></textarea><br />

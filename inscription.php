@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="css/app.css" />
@@ -14,9 +14,10 @@
     <p></p>
 </header>
 
+    <main>
 <!--Création de compte-->
 <div class="container">  
-<form class="container" action='' method="post"> 
+<form class="container" method="post"> 
     
     <div class="form-group">
         <label class="control-label" for="prenom">Prénom</label>
